@@ -29,7 +29,7 @@ function App() {
 		}
 	}, [githubUser]);
 
-	const handleSearch = (username) => {
+	const handleSearch = (username: React.SetStateAction<null>) => {
 		setGithubUser(username);
 	};
 	return (

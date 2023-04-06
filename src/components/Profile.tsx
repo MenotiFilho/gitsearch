@@ -15,8 +15,8 @@ interface Props {
 		html_url?: string;
 		bio?: string;
 		location?: string;
-		blogUrl?: string;
-		twitterUsername?: string;
+		blog?: string;
+		twitter_username?: string;
 		company?: string;
 		followers: number;
 		following: number;
@@ -61,43 +61,43 @@ const Profile: React.FC<Props> = ({ data }) => {
 					</div>
 				</div>
 				<div className="mt-6">
-					<div className="grid grid-cols-2 gap-5 m-auto gap-x-36 items-start">
+					<div className="grid grid-cols-2 gap-y-6 m-auto items-start">
 						{data?.location && (
 							<div className="flex gap-2 items-center ">
 								<MapPinIcon className="h-6 w-6 text-gray-500" />
 								<p>{data?.location}</p>
 							</div>
 						)}
-						{data?.blogUrl && (
+						{data?.blog && (
 							<div className="flex gap-2 items-center ">
 								<LinkIcon className="h-6 w-6 text-gray-500" />
 								<a
-									href={data?.blogUrl}
+									href={data?.blog}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-blue-500 hover:underline"
+									className="text-blue-500 hover:underline w-10"
 								>
-									{data?.blogUrl}
+									{data?.blog}
 								</a>
 							</div>
 						)}
-						{data?.twitterUsername && (
+						{data?.twitter_username && (
 							<div className="flex gap-2 items-center ">
 								<LinkIcon className="h-6 w-6 text-gray-500" />
 								<a
-									href={`https://twitter.com/${data?.twitterUsername}`}
+									href={`https://twitter.com/${data?.twitter_username}`}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-blue-500 hover:underline"
 								>
-									@{data?.twitterUsername}
+									@{data?.twitter_username}
 								</a>
 							</div>
 						)}
 						{data?.company && (
 							<div className="flex gap-2 items-center ">
 								<BriefcaseIcon className="h-6 w-6 text-gray-500" />
-								<p>{data?.company}</p>
+								<p className="w-16">{data?.company}</p>
 							</div>
 						)}
 					</div>
